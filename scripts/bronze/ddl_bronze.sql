@@ -1,3 +1,19 @@
+/*
+===============================================================
+DDL: Create Bronze Layer Tables
+===============================================================
+Purpose:
+    Creates the six tables of the 'bronze' schema that hold raw data
+    from the CRM and ERP source files. Existing tables are dropped
+    and recreated.
+
+WARNING:
+    Running this script deletes any data already loaded in these tables.
+    Reload afterwards with: EXEC bronze.load_bronze;
+===============================================================
+*/
+
+
 IF OBJECT_ID('bronze.crm_cust_info', 'U') IS NOT NULL
     DROP TABLE bronze.crm_cust_info;
 GO
